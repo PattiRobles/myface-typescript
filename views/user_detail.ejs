@@ -4,7 +4,6 @@
 
         <body>
 
-
             <img class="profile_image" src="<%= profileImageUrl %>" alt="user's profile picture">
             <img class="background_picture" src="<%= coverImageUrl %>" alt="user's main picture" <h4>
             <!-- <div class="user_details_container"> -->
@@ -20,21 +19,69 @@
             <!-- </div> -->
 
 
-            <div class="user_posts">
-                <p>
+            <section class="user_posts">
+                <h3>
                     <%=name%>'s Posts
-                </p>
-            </div>
-            <div class="flex_posts_container">
-                <% posts.forEach(function(user) {%>
-                    <!-- <%= user.message %> -->
-                    <img class="posts_images" src="<%=user.imageUrl %>" alt="image uploaded by user">
-                    <%})%>
+                </h3>
 
-                        <p>My likes</p>
+                <div class="flex_posts_container">
+                    <% posts.forEach(function(post) {%>
+                        <div class="individual_post_container">
+                            <img class="post_image" src="<%=post.imageUrl %>" alt="image uploaded by user">
+                            <p class="associated_data">
+                                <%= post.message %>
+                                    <%= post.createdAt %>
+                            </p>
+                        </div>
+                        <%})%>
+                </div>
+                </div>
+            </section>
+            <h3>
+                <%=name.split(' ')[0] %>' s Liked Posts </h3>
+                    <section class="user_likes">
 
-                        <p>My dislikes</p>
-            </div>
+                        <div class="flex_posts_container">
+                            <% likes.forEach(function(post) {%>
+                                <!-- LIKES is a key/property of USER that returns an array  -->
+                                <div class="individual_post_container">
+                                    <img class="elem1 post_image" src="<%= post.imageUrl %>" alt="post image" />
+                                    <div>
+                                        <p class="elem2">
+                                            <%= post.message %>
+                                                <%= post.createdAt, "dd-MM-yyyy" %>
+                                                    <!-- <%= post.createdAt.split(' ')[0] %></p> -->
+                                        </p>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                    </section>
+
+                    <h3>
+                        <%=name.split(' ')[0] %>' s Disliked Posts </h3>
+                            <section class="user_dislikes">
+
+
+                                <div class="flex_posts_container">
+                                    <% dislikes.forEach(function(post) {%>
+                                        <section class="individual_post_container">
+                                            <img class="elem1 post_image" src="<%= post.imageUrl %>" alt="post image" />
+                                            <div>
+                                                <p class="elem2">
+                                                <p>
+                                                    <%= post.createdAt, " dd-MM-yyyy" %>
+                                                </p>
+                                                <!-- <%= post.createdAt.split(' ')[0] %></p> -->
+                                                <p>
+                                                    <%= post.message %>
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </section>
+                                        <% }); %>
+                                </div>
+                            </section>
 
         </body>
         <%- include('_footer') -%>

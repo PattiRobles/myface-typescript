@@ -20,19 +20,15 @@ body {
 }
 
 .background_picture {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
-    /* Set a specific height */
     height: 30%;
     width: 100%;
-    margin: 0;
-    /* Position and center the image to scale nicely on all screens */
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     z-index: 1;
+
 }
 
 .profile_image {
@@ -43,10 +39,6 @@ body {
     left: 5%;
     z-index: 2;
     border: 3px solid whitesmoke;
-
-
-    /* border-color: green;
-    border: 5px; */
 }
 
 .menu {
@@ -77,15 +69,15 @@ body {
 
 .user_email {
     position: absolute;
-    top: 30%;
+    top: 29%;
     left: 23%;
     z-index: 4;
     width: 100%;
     opacity: 0.7;
     height: 10%;
     text-align: justify;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 150;
 }
 
 .user_id {
@@ -99,21 +91,55 @@ body {
     text-align: justify;
     font-weight: 300;
     font-size: 20px;
-
-
 }
 
 .flex_posts_container {
-
     display: flex;
-    flex-wrap: wrap;
-
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* justify-content: space-around; */
+    /* overflow-x: scroll; */
+    /* overflow-x: hidden; */
 }
 
-.posts_images {
+.individual_post_container {
+    position: relative;
+    /* flex-direction: column; */
+}
+
+.associated_data {
+    position: absolute;
+    bottom: 0;
+}
+
+.post_image {
     height: auto;
     width: 250px;
 }
+
+.user_posts {
+    position: relative;
+    padding-top: 100px;
+}
+
+.user_likes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.user_dislikes {
+    display: flex;
+}
+
+.elem1 {}
+
+.elem2 {
+    background-color: #151820;
+}
+
 
 /* }
 

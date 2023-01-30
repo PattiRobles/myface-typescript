@@ -43,7 +43,7 @@ router.get("/:userId/", async (request, response) => {
   const userId = parseInt(request.params.userId);
 
   const user = await getUser(userId);
-  return response.render("user_detail", user); //rendering the "user-id" file, but we are calling users
-});
+  return response.render("user_detail", user); //rendering the "user-id" ejs file and the USER obj,detailed in userModel
+})
 
 export default router;
