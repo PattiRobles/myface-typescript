@@ -1,8 +1,50 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1><%= name %></h1>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+
+        <body>
+
+
+            <img class="profile_image" src="<%= profileImageUrl %>" alt="user's profile picture">
+            <img class="background_picture" src="<%= coverImageUrl %>" alt="user's main picture" <h4>
+            <!-- <div class="user_details_container"> -->
+            <h3 class="user_name">
+                <%= name %>
+            </h3>
+            <h5 class="user_id">
+                <%= username %>
+            </h5>
+            <h5 class="user_email">
+                <%= email %>
+            </h5>
+            <!-- </div> -->
+
+
+            <p>Posts <%=name%> Liked </p>
+            <% posts.forEach(function(user) {%>
+                <%= user.message %>
+                    <img src="<%=user.imageUrl %>" alt="image uploaded by user">
+                    <%})%>
+
+                        <p>My likes</p>
+
+                        <p>My dislikes</p>
+
+
+        </body>
+        <%- include('_footer') -%>
+
 </html>
+
+
+<!-- export interface UserModel {
+    id: number;
+    name: string;
+    username: string;
+    profileImageUrl: string;
+    coverImageUrl: string;
+    email: string;
+    posts: UserPostModel[];
+    likes: UserPostModel[];
+    dislikes: UserPostModel[];
+  } -->

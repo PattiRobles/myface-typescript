@@ -7,10 +7,19 @@
             <ol>
                 <% results.forEach(function(user) {%>
                     <li>
-                        <%= user.name %>
-                            <br></br>
-                            <img src="<%=user.profileImageUrl %>>" </img>
-                            <!-- with an extra > after the %> tag above, the picture changes - why? -->
+                        <h3>
+                            <a href="/users/<%= parseInt(user.id) %>/">
+                                <%= user.name %>
+                            </a>
+                            <!-- link not working - used .users/:userId/  ... error expected to find 1 item but found 0 -->
+                        </h3>
+
+                        <p>
+                            UserId: <%=user.id %>
+                        </p>
+                        <br></br>
+                        <img src="<%=user.profileImageUrl %>>" </img>
+                        <!-- with an extra > after the %> tag above, the picture changes - why? -->
                     </li>
                     <% }); %>
             </ol>

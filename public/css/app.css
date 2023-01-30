@@ -1,1 +1,105 @@
 /* Add your styles here. */
+/* to do */
+/* nav bar - push to top :right
+post header , enlarge and space top/bottom
+buttons - like dislike - put them inline
+next/prev , centre bottom */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    color: #dcdcdc;
+    background-color: #252A38;
+
+}
+
+.background_picture {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+    /* Set a specific height */
+    height: 30%;
+    width: 100%;
+    margin: 0;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.profile_image {
+    width: 15%;
+    border-radius: 50%;
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    z-index: 2;
+    border: 3px solid whitesmoke;
+
+
+    /* border-color: green;
+    border: 5px; */
+}
+
+.menu {
+    list-style: none;
+    position: fixed;
+    right: 5px;
+    z-index: 3;
+    opacity: 0.5;
+}
+
+/* .user_details_container {
+    position: absolute;
+} */
+
+.user_email {
+    font-weight: 300;
+}
+
+.user-id {
+    font-weight: 600;
+
+}
+
+/* }
+
+.flex_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flex_child {
+    list-style-type: none;
+}
+
+.img_container {
+    /* width: 80%; */
+/* }
+
+.img_post {
+    width: 50%
+}
+
+.button_container {}
+
+.like {
+    display: inline;
+}
+
+.dislike {
+    display: inline;
+}
+
+@media only screen and (min-width:670px) {
+    .flex_container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+} */

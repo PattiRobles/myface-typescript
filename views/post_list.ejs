@@ -4,15 +4,40 @@
 
         <body>
             <h1>Posts</h1>
-            <ol>
-                <% postList.results.forEach(function(post) {%>
-                    <li>
-                        <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
-                                <img src=<%=post.imageUrl %> alt="image uploaded by user"> </img>
-                                <% post.likedBy.forEach(function(likeby) {%>
-                                    <%= likeby.username %>
-                                        <% });%>
+            <ol class="flex_container">
+                <% postList.results.forEach(function(post) {%> <!--postList is an object that comes from postRoutes -->
+                    <li class="flex_child">
+                        <div class="image_container">
+                            <img src=<%=post.imageUrl %> alt="image uploaded by user"> </img>
+                        </div>
 
+                        <h4>
+                            <%= post.message %>
+                        </h4>
+                        <p> Created by <a href="/users/<%= post.postedBy.id %>/" target='_blank'>
+
+                                <%=post.postedBy.name %>
+                            </a>
+                            on <%= format(post.createdAt, "dd-MM-yyyy" ) %>
+                        </p>
+
+                        <p>
+                            Post liked by <% post.likedBy.slice(0,2).forEach(function(likedBy) {%>
+                                <%= likedBy.name + ',' %>
+                                    <% });%>
+                                        ... and <%= post.likedBy.length -2 %> others.
+
+                                            <!-- tried tailoring text with if statements - error -->
+
+                        </p>
+                        <div class="button_container">
+                            <form method="post" action="/posts/<%= post.id %>/like/">
+                                <button class="like" type="submit">❤</button>
+                            </form>
+                            <form method="post" action="/posts/<%= post.id %>/dislike/">
+                                <button class="dislike" type="submit">👎🏼</button>
+                            </form>
+                        </div>
                     </li>
                     <% }); %>
             </ol>
