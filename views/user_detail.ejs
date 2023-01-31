@@ -47,10 +47,10 @@
                                 <div class="individual_post_container">
                                     <img class="elem1 post_image" src="<%= post.imageUrl %>" alt="post image" />
                                     <div>
-                                        <p class="elem2">
+                                        <p class="associated_data">
                                             <%= post.message %>
-                                                <%= post.createdAt, "dd-MM-yyyy" %>
-                                                    <!-- <%= post.createdAt.split(' ')[0] %></p> -->
+                                                <!-- <%= post.createdAt %> -->
+                                                <%= post.createdAt.split(' ')[0] %>
                                         </p>
                                     </div>
                                 </div>
@@ -60,19 +60,20 @@
 
                     <h3>
                         <%=name.split(' ')[0] %>' s Disliked Posts </h3>
-                            <section class="user_dislikes">
+                                                    <section class="user_dislikes">
 
 
-                                <div class="flex_posts_container">
-                                    <% dislikes.forEach(function(post) {%>
-                                        <section class="individual_post_container">
-                                            <img class="elem1 post_image" src="<%= post.imageUrl %>" alt="post image" />
-                                            <div>
-                                                <p class="elem2">
-                                                <p>
-                                                    <%= post.createdAt, " dd-MM-yyyy" %>
-                                                </p>
-                                                <!-- <%= post.createdAt.split(' ')[0] %></p> -->
+                                                        <div class="flex_posts_container">
+                                                            <% dislikes.forEach(function(post) {%>
+                                                                <section class="individual_post_container">
+                                                                    <img class="elem1 post_image"
+                                                                        src="<%= post.imageUrl %>" alt="post image" />
+                                                                    <div>
+                                                                        <p class="associated_data">
+                                                                            <!-- <p>
+                                                    <%= post.createdAt %>
+                                                </p> -->
+                                                                            <%= post.createdAt.split(' ')[0] %></p>
                                                 <p>
                                                     <%= post.message %>
                                                 </p>
@@ -80,23 +81,10 @@
                                             </div>
                                         </section>
                                         <% }); %>
-                                </div>
-                            </section>
+                                
+                            
 
         </body>
-        <%- include('_footer') -%>
+      
 
 </html>
-
-
-<!-- export interface UserModel {
-    id: number;
-    name: string;
-    username: string;
-    profileImageUrl: string;
-    coverImageUrl: string;
-    email: string;
-    posts: UserPostModel[];
-    likes: UserPostModel[];
-    dislikes: UserPostModel[];
-  } -->
