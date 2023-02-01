@@ -3,9 +3,12 @@
     <%- include('_header') -%>
 
         <body>
+
+            <button id="color_change-button">Random color!</button>
             <h1>Posts</h1>
             <ol class="flex_container">
-                <% postList.results.forEach(function(post) {%> <!--postList is an object that comes from postRoutes -->
+                <% postList.results.forEach(function(post) {%>
+                    <!--postList is an object that comes from postRoutes -->
                     <li class="flex_child">
                         <div class="image_container">
                             <img src=<%=post.imageUrl %> alt="image uploaded by user"> </img>

@@ -3,16 +3,12 @@
     <%- include('_header') -%>
 
         <body>
-
+            <button id="menu_button"> Menu button</button>
             <img class="profile_image" src="<%= profileImageUrl %>" alt="user's profile picture">
             <img class="background_picture" src="<%= coverImageUrl %>" alt="user's main picture" <h4>
             <!-- <div class="user_details_container"> -->
-            <h3 class="user_name">
-                <%= name %>
-            </h3>
-            <h5 class="user_id">
-                <%= username %>
-            </h5>
+            <h3 class="user_name"> <%= name %> </h3>
+            <h5 class="user_id"><%= username %></h5>
             <h5 class="user_email">
                 <%= email %>
             </h5>
@@ -74,17 +70,18 @@
                                                     <%= post.createdAt %>
                                                 </p> -->
                                                                             <%= post.createdAt.split(' ')[0] %></p>
-                                                <p>
+
                                                     <%= post.message %>
-                                                </p>
+
                                                 </p>
                                             </div>
                                         </section>
                                         <% }); %>
-                                
-                            
+                                </div>
+                            </section>
+
 
         </body>
-      
+        <%- include('_footer') -%>
 
 </html>
